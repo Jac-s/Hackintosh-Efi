@@ -18,5 +18,12 @@ ENV
   echo "Mot de passe du tableau de bord : ${password}  (aussi dans .env)"
 fi
 
-docker compose up -d
-echo "OmniRoute : http://localhost:20128"
+docker compose --profile tunnel up -d
+echo "Interface locale : http://localhost:20128"
+echo "Adresse publique (patiente quelques secondes) :"
+for _ in $(seq 1 30); do
+  url=$(docker compose logs tunnel 2>/dev/null | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | tail -1 || true)
+  [ -n "$url" ] && { echo "$url   <- ouvre-la pour l'interface, API sur $url/v1"; exit 0; }
+  sleep 2
+done
+echo "Adresse introuvable, vois : docker compose logs tunnel"

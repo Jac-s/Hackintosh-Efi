@@ -25,8 +25,10 @@ Le port est volontairement limité à la machine locale. Pour y accéder à dist
 
 - **Tailscale (le plus simple et le plus sûr)** : installe Tailscale sur la machine et sur tes
   appareils, puis `tailscale serve --bg 20128`. Adresse : `https://<machine>.<tailnet>.ts.net`.
-- **Cloudflare Tunnel** : `cloudflared tunnel --url http://localhost:20128` (adresse publique,
-  garde `REQUIRE_API_KEY=true` et un mot de passe fort).
+- **Cloudflare Tunnel (inclus, activé par `install.sh`)** : adresse publique HTTPS
+  `https://xxxx.trycloudflare.com`, qui change à chaque redémarrage du tunnel. Elle ouvre l'interface
+  web d'OmniRoute et l'API (`/v1`). Protégée par le mot de passe et `REQUIRE_API_KEY=true`.
+  Pour une adresse fixe, utilise un tunnel Cloudflare nommé avec ton propre domaine.
 
 ## Dans tes outils
 
