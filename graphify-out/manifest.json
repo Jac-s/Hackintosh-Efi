@@ -1,0 +1,14 @@
+{
+  "run-emulator.sh": {
+    "mtime": 1793822365.1201248,
+    "seen": 1793822571.2508068,
+    "ast_hash": "4592f0d6bfd75481de56e4436e4bb382",
+    "semantic_hash": "4592f0d6bfd75481de56e4436e4bb382"
+  },
+  "setup-android-emulator.sh": {
+    "mtime": 1793822365.1201248,
+    "seen": 1793822571.2508135,
+    "ast_hash": "cabe3e52815c218bcf1e487b7f774e15",
+    "semantic_hash": "cabe3e52815c218bcf1e487b7f774e15"
+  }
+}
